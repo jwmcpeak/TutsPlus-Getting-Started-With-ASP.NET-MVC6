@@ -1,0 +1,16 @@
+﻿@model Message
+
+@{
+    ViewBag.Title = "Post a Message";
+}
+
+<h2>Post a Message</h2>
+
+<div asp-validation-summary="ValidationSummary.All"></div>
+
+<form action="/message/create" method="post">
+    @Html.AntiForgeryToken()
+    <label asp-for="MessageTitle"></label>@Html.EditorFor(m => m.MessageTitle) @Html.ValidationMessageFor(m => m.MessageTitle)<br/>
+    <label asp-for="MessageContent"></label><input asp-for="MessageContent" /> <span asp-validation-for="MessageContent"></span><br />
+    <input type="submit" value="Submit" />
+</form>

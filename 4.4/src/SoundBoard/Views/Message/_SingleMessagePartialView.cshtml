@@ -1,0 +1,30 @@
+﻿@using SoundBoard.ViewModels
+@using System.Security.Claims
+
+@model MessageViewModel
+
+<div class="message">
+    <h3>
+        <a asp-action="DisplayById" asp-controller="Message"
+           asp-route-id="@Model.Id">@Model.MessageTitle</a>
+    </h3>
+    <div class="row">
+        <div class="col-sm-9">
+            <p>@Model.MessageContent</p>
+        </div>
+        <div class="col-sm-3">
+            @if (User.GetUserId() == Model.UserId)
+            {
+                <a asp-action="Edit" asp-controller="Message"
+                   asp-route-id="@Model.Id">Edit Message</a>
+            }
+            else
+            {
+            <a asp-action="DisplayByUser" asp-controller="Message"
+               asp-route-username="@Model.Username">@Model.Username</a>
+            }
+            <br />
+            @Model.Created.ToString("yyyy-MM-dd")
+        </div>
+    </div>
+</div>

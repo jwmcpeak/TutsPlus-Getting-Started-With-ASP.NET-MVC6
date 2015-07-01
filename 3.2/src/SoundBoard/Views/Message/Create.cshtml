@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Post a Message";
+}
+
+<h2>Post a Message</h2>
+
+<form action="/message/create" method="post">
+    <input type="text" name="messageTitle" id="messageTitle" /><br/>
+    <input type="text" name="messageContent" id="messageContent" /><br />
+    <input type="submit" value="Submit" />
+</form>

@@ -1,0 +1,14 @@
+﻿@using SoundBoard.ViewModels
+
+@model IEnumerable<MessageViewModel>
+@{
+    // ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Heading</h2>
+
+@foreach (var message in Model)
+{
+    @Html.Partial("_SingleMessagePartialView", message)
+    <hr>
+}

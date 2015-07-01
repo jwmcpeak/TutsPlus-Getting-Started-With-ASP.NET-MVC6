@@ -1,0 +1,15 @@
+﻿@model Message
+
+@{
+    ViewBag.Title = "Edit Message";
+}
+
+<h2>Edit Message</h2>
+
+<div asp-validation-summary="ValidationSummary.All"></div>
+
+<form asp-controller="message" asp-action="edit" asp-anti-forgery="true" method="post">
+    <label asp-for="MessageTitle"></label><input asp-for="MessageTitle" /><br/>
+    <label asp-for="MessageContent"></label><input asp-for="MessageContent" /> <br />
+    <input type="submit" value="Edit Message" />
+</form>

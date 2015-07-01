@@ -1,0 +1,23 @@
+﻿@using SoundBoard.ViewModels
+
+@model IEnumerable<MessageViewModel>
+@{
+    // ViewBag.Title = "Home Page";
+}
+
+@foreach (var message in Model)
+{
+    <div class="message">
+        <h3>@message.MessageTitle</h3>
+        <div class="row">
+            <div class="col-sm-9">
+                <p>@message.MessageContent</p>
+            </div>
+            <div class="col-sm-3">
+                @message.Username<br />
+                @message.Created.ToString("yyyy-MM-dd")
+            </div>
+        </div>
+    </div>
+    <hr>
+}

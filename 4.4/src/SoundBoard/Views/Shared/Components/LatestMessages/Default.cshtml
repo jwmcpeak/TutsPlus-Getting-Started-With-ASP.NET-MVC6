@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Message>
+
+<ul>
+    @foreach (var message in Model)
+    {
+        <li><a asp-action="DisplayById" asp-controller="Message"
+               asp-route-id="@message.Id">@message.MessageTitle</a></li>
+    }
+</ul>
